@@ -30,6 +30,18 @@ ActiveRecord::Migration.maintain_test_schema!
 
 DatabaseCleaner.strategy = :truncation
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
+def create_idea
+  Idea.create(title: "Idea1",
+              body: "Body1")
+end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
