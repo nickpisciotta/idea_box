@@ -8,6 +8,12 @@ class IdeasController < ApplicationController
     end
   end
 
+  def destroy
+   @idea = Idea.find(params[:id])
+   @idea.destroy
+   head :no_content
+  end
+
   private
     def idea_params
       params.require(:idea).permit(:title, :body)
