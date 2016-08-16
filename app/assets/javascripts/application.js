@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
-    createIdeaListener("#create-idea")
+  createIdeaListener("#create-idea")
+  getIdeas()
+  
 })
