@@ -8,6 +8,11 @@ class IdeasController < ApplicationController
     end
   end
 
+  def index
+    ideas = { idea: Idea.all }
+    render :json => ideas
+  end
+
   private
     def idea_params
       params.require(:idea).permit(:title, :body)
