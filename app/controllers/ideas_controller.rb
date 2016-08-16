@@ -9,9 +9,14 @@ class IdeasController < ApplicationController
   end
 
   def destroy
-   @idea = Idea.find(params[:id])
-   @idea.destroy
-   head :no_content
+    @idea = Idea.find(params[:id])
+    @idea.destroy
+    head :no_content
+  end
+
+  def index
+    ideas = { idea: Idea.all }
+    render :json => ideas
   end
 
   private

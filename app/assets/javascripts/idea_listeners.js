@@ -1,4 +1,4 @@
-function createIdeaListener (selector){
+function createIdeaListener(selector) {
   $(selector).on('click', function(){
     var ideaTitle = $("#idea-title").val()
     var ideaBody = $("#idea-body").val()
@@ -7,5 +7,11 @@ function createIdeaListener (selector){
       body: ideaBody
     }}
     postIdea(postData)
+  })
+}
+
+function deleteIdeaListener(selector) {
+  $("body").on('click', selector, function(){
+  deleteIdea(this)
   })
 }
