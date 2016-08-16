@@ -15,6 +15,7 @@
 //= require_tree .
 $(document).ready(function(){
   createIdeaListener("#create-idea")
+  deleteIdeaListener("[id^=delete-idea]")
   getIdeas()
-  
+
 })

@@ -8,6 +8,12 @@ class IdeasController < ApplicationController
     end
   end
 
+  def destroy
+    @idea = Idea.find(params[:id])
+    @idea.destroy
+    head :no_content
+  end
+
   def index
     ideas = { idea: Idea.all }
     render :json => ideas
