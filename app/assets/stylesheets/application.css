@@ -13,3 +13,104 @@
  *= require_tree .
  *= require_self
  */
+html {
+   margin: 0;
+   font-family: 'Open Sans', sans-serif;
+ }
+
+h1 {
+  color: #a8cf37;
+  margin-top: 20px;
+}
+
+header {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  /*justify-content: center;*/
+  text-align: center;
+}
+
+.idea-table {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 10%;
+}
+
+
+.idea-container {
+  width: 70vw;
+  /*width: 100%;*/
+  display: flex;
+  flex-direction: row;
+
+}
+
+td {
+  width: 70vw;
+}
+
+.test {
+  width: 600px;
+
+}
+
+/*
+.title {
+  flex: 2;
+}
+
+.body {
+  flex: 4;
+}
+
+.quality {
+  flex: 2;
+}
+
+.delete-button {
+  flex: 1;
+}*/
+/*.quality {
+  flex:
+}*/
+
+/*tr {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+input#idea-title {
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+input#idea-body{
+  height: 40px;
+  width: 40%;
+}
+
+/*.header-section{
+  margin-left: 0;
+  background-color: black;
+  display: inline-block;;
+}*/
+
+#create-idea {
+  width: 40%;
+  color: #a8cf37;
+  font-size: 1.3em;
+  background: transparent;
+  border: 2px solid #a8cf37;
+}
+#create-idea:hover {
+  background-color: #a8cf37;
+  color: black;
+}

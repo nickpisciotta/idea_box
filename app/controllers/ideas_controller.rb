@@ -19,6 +19,15 @@ class IdeasController < ApplicationController
     render :json => ideas
   end
 
+  def update
+    idea = Idea.find(params[:id])
+    if idea.update(idea_params)
+      render :json => {idea: idea}
+    else
+      flash[:notice] = "Idea did not save"
+    end
+  end
+
   private
     def idea_params
       params.require(:idea).permit(:title, :body)

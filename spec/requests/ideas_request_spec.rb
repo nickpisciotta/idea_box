@@ -18,12 +18,28 @@ describe "Ideas Controller" do
     expect(parsed_response["idea"]["quality"]).to eq("Swill")
   end
 
+  it "updates an idea" do
+    idea = create_idea
+
+    put "/ideas/#{idea.id}", params: {idea: {title: "New Title",
+                    body: "New Body"}
+                    }
+    expect(response.status).to eq(200)
+
+    parsed_response = JSON.parse(response.body)
+
+    expect(parsed_response["idea"]["title"]).to eq("New Title")
+    expect(parsed_response["idea"]["body"]).to eq("New Body")
+    expect(parsed_response["idea"]["quality"]).to eq("Swill")
+  end
+
+
   it "deletes an idea" do
     idea = create_idea
 
     expect(Idea.count).to eq(1)
 
-    delete "/ideas/2"
+    delete "/ideas/#{idea.id}"
 
     expect(Idea.count).to eq (0)
   end
