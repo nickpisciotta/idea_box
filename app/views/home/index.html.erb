@@ -1,29 +1,32 @@
-<h1>Idea Box</h1>
-<h2>New Idea: </h2>
-  <form>
-    Title:<br>
-    <input type="text" name="title" id="idea-title"><br>
-    Body:<br>
-    <input type="text" name="body" id="idea-body">
-  </form></br>
+<header>
+  <h1>Idea Box</h1>
+  <section class="header-section">
+    <form>
+      Title:<br>
+      <input type="text" name="title" id="title-box"><br>
+      Body:<br>
+      <input type="text" name="body" id="body-box">
+    </form></br>
+  </section>
   <div>
     <input class="btn btn-default" id="create-idea" type="button" name="submit" value="Save">
   </div>
+</header>
 
 <div class="">
   <h2>All Ideas:</h2>
   <table class="table idea-table">
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Quality</th>
-      <th></th>
-    </tr>
-    <tr>
+    <!-- <tr>
+      <th class='title'>Title</th>
+      <th class='body'>Body</th>
+      <th class='quality'>Quality</th>
+      <th class='delete-button'></th>
+    </tr> -->
+    <tr class="idea-container">
       <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
-    </table>
+  </table>
   </div>
