@@ -13,10 +13,11 @@ function postIdea(postData){
     }
   });
   function appendData(data) {
-    $(".idea-table").find('tbody:last').append("<tr class='idea-row" +data.idea.id + " test'><td class='search' id='idea" + data.idea.id + "-title' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.title + "</td></tr>")
-    $(".idea-table").find('tr:last').append("<td class='search' id='idea" + data.idea.id + "-body' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.body + "</td>")
-    $(".idea-table").find('tr:last').append("<td>" + data.idea.quality + "</td>")
-    $(".idea-table").find('tr:last').append("<td><input class='btn btn-primary' id='delete-idea" + data.idea.id + "' data-idea-id='" + data.idea.id + "'type='button' name='submit' value='delete'></td>")
+    $(".idea-table tbody").prepend("<tr class='idea-row" +data.idea.id + " test'><td class='search' id='idea" + data.idea.id + "-title' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.title + "</td>" +
+    "<td class='search' id='idea" + data.idea.id + "-body' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.body + "</td>" +
+    "<td>" + data.idea.quality + "</td>" +
+    "<td><input class='btn btn-primary' id='delete-idea" + data.idea.id + "' data-idea-id='" + data.idea.id + "'type='button' name='submit' value='delete'></td>" +
+    "</tr>")
   }
 }
 
@@ -32,10 +33,11 @@ function getIdeas() {
     }
   })
   function appendData(idea) {
-    $(".idea-table").find('tbody:last').append("<tr class='idea-row" +idea.id + " test'><td class='search' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td></tr>")
-    $(".idea-table").find('tr:last').append("<td class='search' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.body + "</td>")
-    $(".idea-table").find('tr:last').append("<td>" + idea.quality + "</td>")
-    $(".idea-table").find('tr:last').append("<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='delete'></td>")
+    $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
+    "<td class='search' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.body + "</td>" +
+    "<td>" + idea.quality + "</td>" +
+    "<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='delete'></td>" +
+    "</tr>")
   }
 }
 
