@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
+  getIdeas()
   createIdeaListener("#create-idea")
   deleteIdeaListener("[id^=delete-idea]")
   editIdeaListener("[id^=idea]")
-  getIdeas()
-
+  filterSearch(".test")
 })
