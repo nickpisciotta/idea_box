@@ -20,5 +20,7 @@ $(document).ready(function(){
   createIdeaListener("#create-idea")
   deleteIdeaListener("[id^=delete-idea]")
   editIdeaListener("[id^=idea]")
+  upvoteListenter("[id^=upvote]")
+  downvoteListener("[id^=downvote]")
   filterSearch(".test")
 })
