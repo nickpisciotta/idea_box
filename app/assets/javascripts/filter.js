@@ -1,16 +1,3 @@
-// Test
-// el1: cars
-// el2: book
-// el3: books
-// fixture.set('<tr data-idea-id="4">cars</tr><tr data-idea-id="5">book</tr>')
-// filterSearch('.ideas')
-// $("#idea_filter_search").val('book')
-// $("#idea_filter_search").trigger("keyup")
-//
-// var visibleText = $('body:visible').html(); // This would need some work
-// expect(visibleText).to.match(/data-idea-id="5"/)
-// expect(visibleText).not.to.match(/data-idea-id="4"/)
-//
 
 function filterSearch(selector) {
   $("#idea_filter_search").on("keyup", function(){
