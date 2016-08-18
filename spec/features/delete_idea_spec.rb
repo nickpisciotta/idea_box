@@ -10,7 +10,7 @@ RSpec.feature "Delete Idea", js: true do
 
     expect(Idea.all.count).to eq(1)
 
-    click_on "delete"
+    click_on "Delete"
 
     expect(page).to_not have_content("New Idea")
     expect(Idea.all.count).to eq(0)

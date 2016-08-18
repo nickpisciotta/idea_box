@@ -37,6 +37,8 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'selenium-webdriver'
+  gem 'teaspoon'
+  gem 'teaspoon-mocha'  
 end
 
 group :test do

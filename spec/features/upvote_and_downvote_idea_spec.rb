@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Change quality of idea", js: true do
-  scenario "Click upvote" do
+  scenario "Click thumbs up" do
     visit root_path
 
     fill_in "title", with: "New Idea"
@@ -12,17 +12,17 @@ RSpec.feature "Change quality of idea", js: true do
       expect(page).to have_content("Swill")
     end
 
-    click_on "upvote"
+    click_on "thumbs up"
 
     within(".idea-table") do
       expect(page).to have_content("Plausible")
     end
   end
 
-  scenario "Click downvote" do
+  scenario "Click thumbs down" do
     visit root_path
 
-    click_on "downvote"
+    click_on "thumbs down"
 
     within(".idea-table") do
       expect(page).to have_content("Swill")
