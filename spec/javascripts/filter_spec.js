@@ -1,23 +1,21 @@
 // require filter
+describe('filter', function () {
 
-describe('filterSearch', function () {
-  it('can remove filter ideas', function () {
-    
+  var idea = document.createElement("tr")
+  idea.className = "test"
+  // <tr class='test'><td class='search title-cell' id='idea1-title'>Example</td>")
+  // fixture.set("<input type='search' id='idea_filter_search'>")
+
+  filterSearch(".test")
+
+  $("#idea_filter_search").val('book')
+  $("#idea_filter_search").trigger("keyup")
+
+
+  var visibleText = $('body:visible').html()
+  debugger
+  it('can remove ideas', function () {
+
+  expect(visibleText).to.match(/data-idea-id="5"/)
   });
 });
-
-
-function setUpIdeas(){
-  var ideas = document.createElement('div');
-  ideas.className = 'ideas';
-  var idea1 = document.createElement('div');
-  idea1.className = 'idea';
-  ideas.appendChild(idea1);
-  var idea2 = document.createElement('div');
-  idea2.className = 'idea';
-  ideas.appendChild(idea2);
-  var idea3 = document.createElement('div');
-  idea3.className = 'idea old';
-  ideas.appendChild(idea3);
-  return ideas;
-}
