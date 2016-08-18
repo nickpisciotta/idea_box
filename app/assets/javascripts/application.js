@@ -22,5 +22,6 @@ $(document).ready(function(){
   editIdeaListener("[id^=idea]")
   upvoteListenter("[id^=upvote]")
   downvoteListener("[id^=downvote]")
+  qualityFilter(".quality-filter")
   filterSearch(".test")
 })

@@ -7,20 +7,11 @@ function postIdea(postData){
     success: function (data) {
       $("#title-box").val("")
       $("#body-box").val("")
-      appendData(data)
+      appendData(data.idea)
       deleteIdeaListener("delete-idea"+data.idea.id)
       $('.ajax-flash').html("<div class='alert alert-success'><h4>Idea Added!</h4></div>")
     }
   });
-  function appendData(data) {
-    $(".idea-table tbody").prepend("<tr class='idea-row" +data.idea.id + " test'><td class='search title-cell' id='idea" + data.idea.id + "-title' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.title + "</td>" +
-    "<td class='search body-cell' id='idea" + data.idea.id + "-body' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.body + "</td>" +
-    "<td class='quality'>" + data.idea.quality + "</td>" +
-    "<td><input class='btn btn-primary' id='delete-idea" + data.idea.id + "' data-idea-id='" + data.idea.id + "'type='button' name='submit' value='delete'></td>" +
-    "<td><input class='btn btn-default' id='upvote" + data.idea.id + "' data-upvote-id='" + data.idea.id + "'type='button' name='submit' value='upvote'></td>" +
-    "<td><input class='btn btn-warning' id='downvote" + data.idea.id + "' data-downvote-id='" + data.idea.id + "'type='button' name='submit' value='downvote'></td>" +
-    "</tr>")
-  }
 }
 
 function getIdeas() {
@@ -34,16 +25,16 @@ function getIdeas() {
       })
     }
   })
+}
 
-  function appendData(idea) {
-    $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search title-cell' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
-    "<td class='search body-cell' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.body + "</td>" +
-    "<td class='quality'>" + idea.quality + "</td>" +
-    "<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='delete'></td>" +
-    "<td><input class='btn btn-default' id='upvote" + idea.id + "' data-upvote-id='" + idea.id + "'type='button' name='submit' value='upvote'></td>" +
-    "<td><input class='btn btn-warning' id='downvote" + idea.id + "' data-downvote-id='" + idea.id + "'type='button' name='submit' value='downvote'></td>" +
-    "</tr>")
-  }
+function appendData(idea) {
+  $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search title-cell' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
+  "<td class='search body-cell' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "' data-idea-body='" + idea.body + "'>" + truncateBody(idea.body) + "</td>" +
+  "<td class='quality'>" + idea.quality + "</td>" +
+  "<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='Delete'></td>" +
+  "<td><input class='btn btn-default' id='upvote" + idea.id + "' data-upvote-id='" + idea.id + "'type='button' name='submit' value='thumbs up'></td>" +
+  "<td><input class='btn btn-warning' id='downvote" + idea.id + "' data-downvote-id='" + idea.id + "'type='button' name='submit' value='thumbs down'></td>" +
+  "</tr>")
 }
 
 function deleteIdea(currentObject) {

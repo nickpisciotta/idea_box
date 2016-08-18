@@ -12,9 +12,19 @@ function createIdeaListener(selector) {
   })
 }
 
+function truncateBody(body) {
+  return body.substring(0, 100)
+}
+
 function deleteIdeaListener(selector) {
   $("body").on('click', selector, function(){
   deleteIdea(this)
+  })
+}
+
+function qualityFilter(selector) {
+  $("body").on('click', selector, function(){
+
   })
 }
 
