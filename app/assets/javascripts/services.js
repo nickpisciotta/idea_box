@@ -13,7 +13,7 @@ function postIdea(postData){
     }
   });
   function appendData(data) {
-    $(".idea-table tbody").prepend("<tr class='idea-row" +data.idea.id + " test'><td class='search' id='idea" + data.idea.id + "-title' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.title + "</td>" +
+    $(".idea-table tbody").prepend("<tr class='idea-row" +data.idea.id + " test'><td class='search title-cell' id='idea" + data.idea.id + "-title' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.title + "</td>" +
     "<td class='search body-cell' id='idea" + data.idea.id + "-body' contenteditable='true' data-idea-id='" + data.idea.id + "'>" + data.idea.body + "</td>" +
     "<td class='quality'>" + data.idea.quality + "</td>" +
     "<td><input class='btn btn-primary' id='delete-idea" + data.idea.id + "' data-idea-id='" + data.idea.id + "'type='button' name='submit' value='delete'></td>" +
@@ -35,7 +35,7 @@ function getIdeas() {
     }
   })
   function appendData(idea) {
-    $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
+    $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search title-cell' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
     "<td class='search body-cell' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.body + "</td>" +
     "<td class='quality'>" + idea.quality + "</td>" +
     "<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='delete'></td>" +
