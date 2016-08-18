@@ -77,10 +77,25 @@ function editIdea(currentObject) {
     }
   });
 }
-function upvote(currentObject) {
-  targetIdeaId = $(currentObject).data("upvote-id");
-
-}
-function downvote(currentObject) {
-  targetIdeaId = $(currentObject).data("downvote-id");
+// function upvote(qualityValue, ideaId) {
+//   $.ajax({
+//     url: "/ideas/" + ideaId,
+//     method: "PUT",
+//     dataType: "JSON",
+//     data: {idea: {quality: qualityValue}},
+//     success: function() {
+//       // $('.ajax-flash').html("<div class='alert alert-success'><h4>Idea Updated!</h4></div>")
+//     }
+//   });
+// }
+function changeQuality(qualityValue, ideaId) {
+  $.ajax({
+    url: "/ideas/" + ideaId,
+    method: "PUT",
+    dataType: "JSON",
+    data: {idea: {quality: qualityValue}},
+    success: function() {
+      // $('.ajax-flash').html("<div class='alert alert-success'><h4>Idea Updated!</h4></div>")
+    }
+  });
 }

@@ -32,10 +32,12 @@ function upvoteListenter(selector) {
     if (quality == 2) {
     } else if (quality == 1) {
       $("body").find(".idea-row"+targetIdeaId).children(".quality").text(qualityCheck[2])
-      // upvote()
+        newQuality = qualityCheck[2]
+        changeQuality(newQuality, targetIdeaId)
     } else {
       $("body").find(".idea-row"+targetIdeaId).children(".quality").text(qualityCheck[1])
-      // upvote(this)
+        newQuality = qualityCheck[1]
+        changeQuality(newQuality, targetIdeaId)
     }
   })
 }
@@ -47,10 +49,12 @@ function downvoteListener(selector) {
     quality = qualityCheck.indexOf(qualityValue)
     if (quality == 2) {
       $("body").find(".idea-row"+targetIdeaId).children(".quality").text(qualityCheck[1])
-      downvote(this)
+      newQuality = qualityCheck[1]
+      changeQuality(newQuality, targetIdeaId)
     } else if (quality == 1) {
         $("body").find(".idea-row"+targetIdeaId).children(".quality").text(qualityCheck[0])
-      downvote()
+        newQuality = qualityCheck[0]
+        changeQuality(newQuality, targetIdeaId)
     } else {
     }
   })

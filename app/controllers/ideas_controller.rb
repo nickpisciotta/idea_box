@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   def create
     idea = Idea.new(idea_params)
@@ -30,6 +30,7 @@ class IdeasController < ApplicationController
 
   private
     def idea_params
-      params.require(:idea).permit(:title, :body)
+      params["idea"]["quality"].to_i
+      params.require(:idea).permit(:title, :body, :quality)
     end
 end
