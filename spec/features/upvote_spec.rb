@@ -18,14 +18,4 @@ RSpec.feature "Change quality of idea", js: true do
       expect(page).to have_content("Plausible")
     end
   end
-
-  scenario "Click thumbs down" do
-    visit root_path
-
-    click_on "thumbs down"
-
-    within(".idea-table") do
-      expect(page).to have_content("Swill")
-    end
-  end
 end
