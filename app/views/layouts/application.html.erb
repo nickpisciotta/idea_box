@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <%= yield %>
 
+    <%= yield %>
     <% flash.each do |type, message| %>
       <div class="alert alert-<%= type %> text-center" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
