@@ -1,24 +1,18 @@
-# README
+## The Big Idea
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple app to record all of your big ideas and visualize them in one central location.
 
-Things you may want to cover:
+This app is an exercise in manipulating the DOM using solely JavaScript and jQuery, while using Rails on the back-end for database management and serving assets.
 
-* Ruby version
+The goal is to create an app with a seamless experience for the user (i.e., no page refreshes)
 
-* System dependencies
+Simply give a title and body to your idea and click save. Your idea will be displayed on the page with the option to search through all the ideas you created.  
 
-* Configuration
+You also have the ability to UpVote of DownVote and idea to change its quality.
 
-* Database creation
+To edit an idea, click within the tile or body fields, make your edit, then click outside the field for the changes to persist to the database.
 
-* Database initialization
+[Production Link](http://thebigidea.herokuapp.com/)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](http://g.recordit.co/FwgDOmdCen.gif)
