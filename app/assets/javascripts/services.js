@@ -1,3 +1,13 @@
+function appendData(idea) {
+  $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search title-cell' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
+  "<td class='search body-cell' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "' data-idea-body='" + idea.body + "'>" + truncateBody(idea.body) + "</td>" +
+  "<td class='quality'>" + idea.quality + "</td>" +
+  "<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='Delete'></td>" +
+  "<td><input class='btn btn-default' id='upvote" + idea.id + "' data-upvote-id='" + idea.id + "'type='button' name='submit' value='thumbs up'></td>" +
+  "<td><input class='btn btn-warning' id='downvote" + idea.id + "' data-downvote-id='" + idea.id + "'type='button' name='submit' value='thumbs down'></td>" +
+  "</tr>")
+}
+
 function postIdea(postData){
   $.ajax({
     url: "/ideas",
@@ -27,15 +37,6 @@ function getIdeas() {
   })
 }
 
-function appendData(idea) {
-  $(".idea-table tbody").prepend("<tr class='idea-row" +idea.id + " test'><td class='search title-cell' id='idea" + idea.id + "-title' contenteditable='true' data-idea-id='" + idea.id + "'>" + idea.title + "</td>" +
-  "<td class='search body-cell' id='idea" + idea.id + "-body' contenteditable='true' data-idea-id='" + idea.id + "' data-idea-body='" + idea.body + "'>" + truncateBody(idea.body) + "</td>" +
-  "<td class='quality'>" + idea.quality + "</td>" +
-  "<td><input class='btn btn-primary' id='delete-idea" + idea.id + "' data-idea-id='" + idea.id + "'type='button' name='submit' value='Delete'></td>" +
-  "<td><input class='btn btn-default' id='upvote" + idea.id + "' data-upvote-id='" + idea.id + "'type='button' name='submit' value='thumbs up'></td>" +
-  "<td><input class='btn btn-warning' id='downvote" + idea.id + "' data-downvote-id='" + idea.id + "'type='button' name='submit' value='thumbs down'></td>" +
-  "</tr>")
-}
 
 function deleteIdea(currentObject) {
   var targetIdeaId= $(currentObject).data("idea-id")

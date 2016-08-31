@@ -38,11 +38,12 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'selenium-webdriver'
   gem 'teaspoon'
-  gem 'teaspoon-mocha'  
+  gem 'teaspoon-mocha'
 end
 
 group :test do
   gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 group :production do
