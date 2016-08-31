@@ -1,21 +1,42 @@
-// require filter
+//= require filter
+//= require idea_listeners
+
 describe('filter', function () {
 
-  var idea = document.createElement("tr")
-  idea.className = "test"
-  // <tr class='test'><td class='search title-cell' id='idea1-title'>Example</td>")
-  // fixture.set("<input type='search' id='idea_filter_search'>")
+  var ideaRow = document.createElement("tr")
+  ideaRow.id = "row"
+  var ideaCell = document.createElement("td")
+  ideaCell.id = "idea-title"
+  var ideaCell2 = document.createElement("td")
+  ideaCell2.id =  "idea-body"
+  var ideaCellText = document.createTextNode("Example1")
+  var ideaCellText2 = document.createTextNode("Example 2")
+  ideaCell.appendChild(ideaCellText)
+  ideaCell2.appendChild(ideaCellText2)
+  ideaRow.appendChild(ideaCell)
+  ideaRow.appendChild(ideaCell2)
 
-  filterSearch(".test")
+  var selector = $("#row")
+  searchElement(selector, "h")
 
   $("#idea_filter_search").val('book')
   $("#idea_filter_search").trigger("keyup")
 
 
   var visibleText = $('body:visible').html()
-  debugger
+
   it('can remove ideas', function () {
 
-  expect(visibleText).to.match(/data-idea-id="5"/)
   });
 });
+
+
+describe('truncate', function() {
+  var text = "daadfadfadfasdfadfasdfadfdasfafdsafdsadjfjadlja;ldfjklajkfljdklfjdlkajda;fda;jfd;jakdlfjalkdfjaldjf;fffff"
+
+  expect(text.length).to.eql(105)
+
+  var result = truncateBody(text)
+
+  expect(result.length).to.eql(100)
+})
